@@ -1,0 +1,24 @@
+{
+  "name": "react-native-x-utils",
+  "version": "1.0.0",
+  "description": "React Native 常用工具合集。",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChenqiaoStation/react-native-x-utils.git"
+  },
+  "keywords": [
+    "react-native",
+    "utils",
+    "iPhone X"
+  ],
+  "author": "net.cctv3.i@gmail.com",
+  "license": "Apache License",
+  "bugs": {
+    "url": "https://github.com/ChenqiaoStation/react-native-x-utils/issues"
+  },
+  "homepage": "https://github.com/ChenqiaoStation/react-native-x-utils#readme"
+}
