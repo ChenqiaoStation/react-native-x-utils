@@ -1,4 +1,5 @@
 import { Dimensions, Platform, StatusBar } from "react-native";
+import struct from "./struct";
 
 /**
  * 判断是否 iPhone 11
@@ -14,13 +15,16 @@ const isiPhone11 = () => {
 };
 
 /**
- * 使用随机颜色
- * @returns string
+ * 随机颜色
+ * @param isMaterialDesign 是否取 Material Design 颜色
+ * @returns
  */
-const useRandomColor = () => {
-  return `#${parseInt(Math.random().toString().replace("0.", ""))
-    .toString(16)
-    .substring(0, 6)}`;
+const useRandomColor = (isMaterialDesign?: boolean) => {
+  return isMaterialDesign
+    ? struct.useRandomProperty(useMaterialDesignColor)
+    : `#${parseInt(Math.random().toString().replace("0.", ""))
+        .toString(16)
+        .substring(0, 6)}`;
 };
 
 /**
@@ -70,10 +74,36 @@ const useCardStyle = (
   };
 };
 
+/**
+ * 尺寸缩放
+ * @param n
+ * @returns
+ */
+const useScale = (n: number) => {
+  const screen = Dimensions.get("screen");
+  return (screen.width / 375) * n;
+};
+
+const useMaterialDesignColor = {
+  red: { name: "嫣红", dark: "#e74b44", light: "#fcdcdd" },
+  orange: { name: "橘橙", dark: "#f57c1f", light: "#fee7d5" },
+  yellow: { name: "明黄", dark: "#fdbc0a", light: "#fff3d1" },
+  olive: { name: "橄榄", dark: "#8ec541", light: "#fcf4db" },
+  green: { name: "森绿", dark: "#3ab54b", light: "#d9f0df" },
+  cyan: { name: "天青", dark: "#1ebcb6", light: "#d4f2f4" },
+  blue: { name: "海蓝", dark: "#0282ff", light: "#cfe7ff" },
+  purple: { name: "姹紫", dark: "#6938b9", light: "#e2d7f3" },
+  mauve: { name: "木槿", dark: "#9e28b2", light: "#edd4f2" },
+  pink: { name: "桃粉", dark: "#e2399a", light: "#fcd7ec" },
+  brown: { name: "棕褐", dark: "#a86640", light: "#f0e1dc" },
+  grey: { name: "玄灰", dark: "#8899a7", light: "#eaebf1" },
+};
+
 export default {
   isiPhone11,
   useRandomColor,
   useStatusBarHeight,
   useHomeIndicatorHeight,
   useCardStyle,
+  useScale,
 };
