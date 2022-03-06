@@ -106,4 +106,5 @@ export default {
   useHomeIndicatorHeight,
   useCardStyle,
   useScale,
+  useMaterialDesignColor,
 };

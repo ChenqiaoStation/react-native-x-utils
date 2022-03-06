@@ -21,9 +21,9 @@ const isJSON = (s: string) => {
  * @returns string
  */
 const useUUID = (length?: number, radix?: number) => {
-  return parseInt(Math.random().toString().replace('0.', ''))
+  return parseInt(Math.random().toString().replace("0.", ""))
     .toString(radix ?? 36)
-    .substring(length ?? 8);
+    .substring(0, length ?? 8);
 };
 
-export default {isJSON, useUUID};
+export default { isJSON, useUUID };
