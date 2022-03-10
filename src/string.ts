@@ -28,12 +28,21 @@ const useUUID = (length?: number, radix?: number) => {
 
 /**
  * 判断是否数字
+ * test: isNumber('') -> false
+ * test: isNumber(null) -> false
+ * test: isNumber(undefined) -> false
+ * test: isNumber('A') -> false
+ * test: isNumber('-1.x') -> false
+ * test: isNumber(1.2) -> true
+ * test: isNumber('1.23') -> true
+ * test: isNumber(-1.2) -> true
+ * test: isNumber('-1.23') -> true
+ *
  * @param n
- * @param stringIsNotNumber 如果一个字符串可以转换成数字
  * @returns
  */
-const isNumber = (n: any, stringIsNotNumber?: boolean) => {
-  return stringIsNotNumber ? typeof n == "number" : !isNaN(n);
+const isNumber = (n: any) => {
+  return n ? !isNaN(n) : false;
 };
 
 export default { isJSON, useUUID, isNumber };
