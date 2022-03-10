@@ -26,4 +26,14 @@ const useUUID = (length?: number, radix?: number) => {
     .substring(0, length ?? 8);
 };
 
-export default { isJSON, useUUID };
+/**
+ * 判断是否数字
+ * @param n
+ * @param stringIsNotNumber 如果一个字符串可以转换成数字
+ * @returns
+ */
+const isNumber = (n: any, stringIsNotNumber?: boolean) => {
+  return stringIsNotNumber ? typeof n == "number" : !isNaN(n);
+};
+
+export default { isJSON, useUUID, isNumber };
