@@ -36,7 +36,7 @@ const useRandomColor = (isMaterialDesign?: boolean) => {
 const useStatusBarHeight = (isImmersible: boolean, isSafe?: boolean) => {
   return Platform.select({
     android: isImmersible ? StatusBar.currentHeight : 0,
-    ios: isiPhone11() ? (isSafe ? 44 : 20) : 0,
+    ios: isiPhone11() ? (isSafe ? 44 : 34) : 20,
   });
 };
 
