@@ -79,9 +79,9 @@ const useCardStyle = (
  * @param n
  * @returns
  */
-const useScale = (n: number) => {
+const useScale = (n: number, uiScreenWidth?: number) => {
   const screen = Dimensions.get("screen");
-  return (screen.width / 375) * n;
+  return (screen.width / uiScreenWidth ?? 375) * n;
 };
 
 const useMaterialDesignColor = {
@@ -99,6 +99,13 @@ const useMaterialDesignColor = {
   grey: { name: "玄灰", dark: "#8899a7", light: "#eaebf1" },
 };
 
+/** 金银铜颜色 */
+enum useWinnerColors {
+  "#f57c1f",
+  "#8899a7",
+  "#987123",
+}
+
 export default {
   isiPhone11,
   useRandomColor,
@@ -107,4 +114,5 @@ export default {
   useCardStyle,
   useScale,
   useMaterialDesignColor,
+  useWinnerColors,
 };
