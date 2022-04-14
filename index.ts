@@ -13,7 +13,7 @@ import { Dimensions } from "react-native";
  * @returns
  */
 const useDip = (n: number, uiScreenWidth?: number) => {
-  return ui.useScale(n, uiScreenWidth ?? 375);
+  return Math.floor(ui.useScale(n, uiScreenWidth ?? 375));
 };
 
 /**
